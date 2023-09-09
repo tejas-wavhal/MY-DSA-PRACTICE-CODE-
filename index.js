@@ -1,9 +1,13 @@
-// DSA 
+// DSA
+
+// Algorithm => Steps to expecute a piece of code
+
 
 // 🟢 // Main Point
 // 👉 // Sub Point
 // ❌ // Not important code for DSA
 // ⭐ // Theory
+// 🎯 // Important
 
 
 
@@ -169,8 +173,20 @@
 // console.log(newArr)
 
 
+
+
+
 // ⭐ The Space and time complexicity :
 // The Space and time complexicity also plays an important role in Programming.
 // The Less is the Space and time complexicity the more good is the performance of code.
 // As we compare all the merge code the worse is the one with While Loop, because of more both Space and time complexicity
 // But with sorting the While Loop code is Best
+
+
+
+
+// 🎯
+// ⭐ The Time Complexity is depend on the line od codes (including how much times loops runs).
+// ⭐ The Space Complexity is (how much the variables are asigned) + (how much memory does the system takes to execute)
+// ⭐ The Algorithms Complexity is that what algorithms shall we use to execute code keeping in mind of Space and Time Complexcity 
+// ⭐ Big O Notation => used to denote complexity of Algorithms
