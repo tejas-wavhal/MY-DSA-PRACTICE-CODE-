@@ -5,9 +5,10 @@
 
 // 🟢 // Main Point
 // 👉 // Sub Point
-// ❌ // Not important code for DSA
+// ❌ // Not important for DSA
 // ⭐ // Theory
 // 🎯 // Important
+// 🔴 // Hard Algorithm
 
 
 
@@ -188,5 +189,121 @@
 // 🎯
 // ⭐ The Time Complexity is depend on the line od codes (including how much times loops runs).
 // ⭐ The Space Complexity is (how much the variables are asigned) + (how much memory does the system takes to execute)
-// ⭐ The Algorithms Complexity is that what algorithms shall we use to execute code keeping in mind of Space and Time Complexcity 
+// ⭐ The Algorithms Complexity is that what algorithms shall we use to execute code keeping in mind of Space and Time Complexcity
 // ⭐ Big O Notation => used to denote complexity of Algorithms
+
+
+
+// ⭐ Asymptotic Analysis & Notation (❌)
+// There are multiple solutions to code foe a solution.
+//  Asymptotic Analysis helps us to find a solution which is best for us. i.e based on Time and Space Complexity
+// In Asymptototic Analysis how to calculate Space and Time and Space Complexcity also comes.
+
+// Asymptotic Notation = > f(n) = 5n2 + 6n + 10
+
+// Time Coplexicity directly depends on the inputs. TC === Inputs.
+// Inputs is ex=> array.length = 6. so we are going to apply loops and the loops will run depending the size of array. so thats why Time Coplexicity directly depends on the inputs
+
+
+
+
+
+
+
+// 🟢 7 Bubble Sorting of Array 🎯
+// In this sorting technique the value inside nested loop is executed for (arr.length * 2)
+
+// let arr = [1, 4, 4, 21, 84, 32, 5, 21]
+
+// for (let i = 0; i < arr.length; i++) {
+//   for (let j = 0; j < arr.length; j++) {
+//     if (arr[j] > arr[j + 1]) {
+//       let temp = arr[j + 1]
+//       let temp2 = arr[j]
+//       arr[j] = temp
+//       arr[j + 1] = temp2
+//     }
+//   }
+// }
+
+// console.log(arr)
+
+
+
+
+
+
+
+
+
+// 🟢 8 Recursion (Repeating YourSelf) 🎯
+// Re = Repeat
+// Cursion = Yourself
+
+
+// const factorial = (value) => { // 🔴
+//   if (value === 0) {
+//     return 1
+//   }
+
+//   return value * factorial(value - 1)
+// }
+
+// console.log(factorial(5))
+
+
+
+// 👉 Direct Recursion 🎯
+// ⭐ ex => if 2 functions are calling each other (with conditions) itself then its called Direct Recursion
+
+// let money = 1000
+
+// let ITC_Share_Price = 200
+
+// const startBuyingProcess = (money, sharePrice, qty = 1) => {
+// debugger;
+//   if (money >= sharePrice) {
+//     console.log(`You have buy ${qty} Share. Your money now is ${money - sharePrice}`)
+
+//     return startBuyingProcess(money - sharePrice, sharePrice, qty + 1)
+//   } else {
+//     return `Insufficient Balance! You have ${money}₹ money. and share price of ITC is ${sharePrice}₹`
+//   }
+
+// }
+
+// const buy_ITC_Share = (money, ITC_Share_Price) => {
+//   if (money < ITC_Share_Price) return `Insufficient Balance! You have ${money}₹ and share price of ITC is ${ITC_Share_Price}₹`
+
+//   return startBuyingProcess(money, ITC_Share_Price)
+
+// }
+
+// console.log(buy_ITC_Share(money, ITC_Share_Price))
+
+
+
+
+// 👉 Indirect Recursion 🎯
+
+function one() {
+  console.log("Finally Executed")
+}
+
+function two() {
+  one()
+}
+
+function three() {
+  two()
+}
+
+function four() {
+  three()
+}
+
+function five() {
+  four()
+}
+
+five()
