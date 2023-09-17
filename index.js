@@ -939,6 +939,11 @@ obj.sex = "Male"
 
 
 
+// ⭐ Difference btwn Map and Set is that Map is similar to Object. and Set is smilar to Array
+
+
+
+
 
 
 
@@ -947,14 +952,72 @@ obj.sex = "Male"
 // ⭐ Difference between Set and Array :
 // There is no duplicate value in Set but in Array there can be
 
-let data = new Set(["tejas", "rohan", "tejas", 45])
+// let data = new Set(["tejas", "rohan", "tejas", 45])
 
-data.add(45)
-data.add(true)
+// data.add(45)
+// data.add(true)
+// data.add({ "hasPc": "no" })
+// console.log(data)
 
-console.log(data)
+// data.forEach((e) => console.log(e))
 
 
+// for (a of data) { console.log(a) }
+
+
+
+
+
+
+
+
+
+
+
+// 🟢 20 Node List  🎯🎯   
+
+// class NodeList {
+//   constructor(data) {
+//     this.head = {
+//       value: data,
+//       next: null
+//     }
+
+//     this.tail = this.head
+
+//     this.size = 1
+//   }
+
+//   appendNode(nodeData) {
+//     let newNode = {
+//       value: nodeData,
+//       next: null
+//     }
+//     this.tail.next = newNode
+//     this.tail = newNode
+//     this.size++
+//   }
+
+//   // Traversing Linked List 
+//   traversing() {
+//     let counter = 0;
+//     let currentNode = this.head
+//     while (counter < this.size) {
+//       console.log(currentNode)
+//       currentNode = currentNode.next
+//       counter++
+//     }
+//   }
+
+// }
+
+// let nodeList = new NodeList(200)
+// nodeList.appendNode(400)
+// nodeList.appendNode(600)
+
+// // nodeList.traversing()
+
+// console.log(nodeList)
 
 
 
