@@ -1,19 +1,16 @@
-let arr = [1, 2, 3, 4, 5]
+let a = [1,2,3,4,5]
 
-let position = 2
-let insert = 50
+let rev = (arr,start,end)=>{
+  let temp ;
+if(start < end){
+  temp = arr[start]
+  arr[start] = arr[end]
+  arr[end] = temp
 
-let tempArray = []
-
-for (let i = 0; i < arr.length; i++) {
-
-  if (i != position) {
-    tempArray.push(arr[i])
-  }
-  if (i == position) {
-    tempArray.push(insert)
-  }
-
+  rev(arr,start+1,end-1)
+}
 }
 
-console.log(tempArray)
+rev(a,0,a.length-1)
+
+console.log(a)

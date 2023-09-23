@@ -355,22 +355,22 @@
 
 
 // 👉 Reverse Array using Recursion 🎯
-// let array = [1, 2, 3, 4, 5]
+let array = [1, 2, 3, 4, 5]
 
-// let temp;
+let temp;
 
-// function reverse(arr, start, end) {
-//   if (start <= end) {
-//     temp = arr[start]
-//     arr[start] = arr[end]
-//     arr[end] = temp
-//     return reverse(arr, start + 1, start - 1)
-//   }
-//   console.log(arr)
-// }
+function reverse(arr, start, end) {
+  if (start < end) {
+    temp = arr[start]
+    arr[start] = arr[end]
+    arr[end] = temp
+    return reverse(arr, start + 1, start - 1)
+  }
+  console.log(arr)
+}
 
 
-// reverse(array, 0, array.length - 1)
+reverse(array, 0, array.length - 1)
 
 
 
