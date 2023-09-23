@@ -104,7 +104,7 @@
 
 
 
-// 🟢 5 Delete item in array
+// // 🟢 5 Delete item in array
 
 // let arr = [1, 2, 3, 4, 5, 6, 7, 8]
 
@@ -342,11 +342,11 @@
 
 // 👉 Head and Tail Recursion 🎯
 // function test(arg) {  // Debuged im html file
-//   // console.log(arg) // Head Recursio
+//   // console.log(arg) // Head Recursion
 //   if (arg > 0) {
 //     test(arg-1)
 //   }
-//   console.log(arg)  // Tail Recursio
+//   console.log(arg)  // Tail Recursion
 // }
 
 // test(5)
@@ -880,13 +880,13 @@
 // 5. Object is also called as Hash Tables
 
 
-let obj = { key: ["tejas", "rohan"] }
+// let obj = { key: ["tejas", "rohan"] }
 
 
 // ⭐ inserting data in object 
-obj.age = 45
-obj.food = "Veg"
-obj.sex = "Male"
+// obj.age = 45
+// obj.food = "Veg"
+// obj.sex = "Male"
 // console.log(obj)
 
 // ⭐ for in loop with object
@@ -974,7 +974,9 @@ obj.sex = "Male"
 
 
 
-// 🟢 20 Node List  🎯🎯   
+// 🟢 20 Node Link List  🎯🎯   
+// ⭐ Link List Structure is a Linear type of Data Structure  (In Sequence)
+
 
 // class NodeList {
 //   constructor(data) {
@@ -988,7 +990,7 @@ obj.sex = "Male"
 //     this.size = 1
 //   }
 
-//   appendNode(nodeData) {
+//   appendNode(nodeData) {  //
 //     let newNode = {
 //       value: nodeData,
 //       next: null
@@ -998,7 +1000,7 @@ obj.sex = "Male"
 //     this.size++
 //   }
 
-//   // Traversing Linked List 
+//   // Traversing Linked List
 //   traversing() {
 //     let counter = 0;
 //     let currentNode = this.head
@@ -1007,6 +1009,70 @@ obj.sex = "Male"
 //       currentNode = currentNode.next
 //       counter++
 //     }
+//     // console.log(this.head)
+//   }
+
+//   // delete node
+//   deleteNode(index) {
+//     if (1 === index) {
+//       this.head = this.head.next
+//       this.size--
+//     } else {
+//       let counter = 1;
+//       let lead = this.head;
+//       while (counter < index - 1) {
+//         lead = lead.next
+//         counter++
+//       }
+//       let nextNode = lead.next.next
+//       lead.next = nextNode
+//       this.size--
+//     }
+//   }
+
+//   searchNode(nodeNumber) {
+//     let result;
+//     if (nodeNumber == 1) {
+//       result = this.head
+//     } else {
+//       let counter = 1
+//       let currentNode = this.head
+//       while (counter < nodeNumber) {
+//         currentNode = currentNode.next
+//         counter++
+//       }
+//       result = currentNode
+//     }
+//     return console.log(result)
+//   }
+
+//   insertNode(index, value) {
+//     if (index == 1) {
+//       let newNode = {
+//         value,
+//         next: this.head
+//       }
+//       this.head = newNode
+//       this.size++
+//     } else {
+//       let counter = 1
+//       let currentNode = this.head
+//       let prevNode = this.head
+//       while (counter < index) {
+//         currentNode = currentNode.next
+//         if (counter > 1) {
+//           prevNode = prevNode.next
+//         }
+//         counter++
+//       }
+//       let newNode = {
+//         value,
+//         next: null
+//       }
+//       prevNode.next = newNode
+//       newNode.next = currentNode
+//       this.size++
+//     }
 //   }
 
 // }
@@ -1014,10 +1080,196 @@ obj.sex = "Male"
 // let nodeList = new NodeList(200)
 // nodeList.appendNode(400)
 // nodeList.appendNode(600)
+// nodeList.appendNode(700)
+// // nodeList.appendNode(800)
 
-// // nodeList.traversing()
+// // nodeList.deleteNode(3)
+
+
+// nodeList.insertNode(1, 50)
+
+// nodeList.searchNode(1)
+
 
 // console.log(nodeList)
+
+// nodeList.traversing()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 🟢 Tree 🌳 🎯🎯
+
+// ⭐ Tree Data Structure is a Non-Linear type of Data Structure  (Not in Sequence)
+
+// ⭐ Tree🌳 can have many nodes but,
+// ⭐ Binary Tree🌳 have maximun two node (i.e left node and right node)
+
+// ⭐ Binary Search Tree ==> Left Node < Root Node < Right Node
+
+
+
+
+
+// class Node {
+//   constructor(value) {
+//     this.value = value
+//     this.left = null
+//     this.right = null
+//   }
+// }
+
+
+// class BSTree {
+//   constructor() {
+//     this.root = null
+//   }
+
+//   isTreeEmpty() {
+//     return !!!this.root
+//   }
+
+//   makeTree(rootValue) {
+//     let newNode = new Node(rootValue)
+//     if (!!!this.root) {
+//       this.root = newNode
+//     } else {
+//       this.insertNode(this.root, newNode)
+//     }
+//   }
+
+//   insertNode(root, newNode) {
+//     if (root.value > newNode.value) {
+//       if (!!!root.left) {
+//         root.left = newNode
+//       } else {
+//         this.insertNode(root.left, newNode)
+//       }
+//     }
+//     if (root.value < newNode.value) {
+//       if (!!!root.right) {
+//         root.right = newNode
+//       } else {
+//         this.insertNode(root.right, newNode)
+//       }
+//     }
+//   }
+
+//   doesNodeExists(root, value) {
+//     if (!!!root) {
+//       return !!root
+//     } else if (root.value === value) {
+//       return true
+//     } else if (value < root.value) {
+//       return this.doesNodeExists(root.left, value)
+//     } else {
+//       return this.doesNodeExists(root.right, value)
+//     }
+//   }
+
+//   // deep first search => pre order
+//   preOrder(root) {
+//     debugger;
+//     if (root) {
+//       console.warn(root.value);
+//       this.preOrder(root.left);
+//       this.preOrder(root.right);
+//     }
+//   }
+
+//   // deep first search => post order
+//   postOrder(root) {
+//     if (root) {
+//       this.postOrder(root.left);
+//       this.postOrder(root.right);
+//       console.warn(root.value);
+//     }
+//   }
+
+//   maxValue(root) {
+//     if (!root.right) {
+//       return root.value;
+//     } else {
+//       return this.maxValue(root.right);
+//     }
+//   }
+
+//   maxValue(root) {
+//     if (!root.right) {
+//       return root.value;
+//     } else {
+//       return this.maxValue(root.right);
+//     }
+//   }
+
+// }
+
+
+
+// let tree = new BSTree()
+
+// tree.makeTree(100)
+// tree.makeTree(50)
+// tree.makeTree(600)
+// tree.makeTree(500)
+// tree.makeTree(10)
+// tree.makeTree(30)
+
+// console.log(tree.doesNodeExists(tree.root, 555))
+// tree.preOrder(tree.root)
+
+
+
+
+// console.log(tree)
+
+
+
+
+
+let str = "Tejas Wavhal"
+
+
+// console.log(str.split(""))
+// console.log(str.replace("a","A")) only changes one
+// console.log(str.replace(/a/g,"A")) // change all
+// console.log(str.substring(0, 5)) // 0 index, 5 for selecting 5 character above
+// console.log(str.split("").reverse().join("")) // reversing string
+// console.log(str.trim()) // removes whitespace from leFt to right
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1036,4 +1288,7 @@ obj.sex = "Male"
 // SKIPED
 
 // circular queue
-// insert soring of array 
+// insert soring of array
+// insert node list
+// breadth first search in Tree
+// Graph 
