@@ -355,22 +355,22 @@
 
 
 // 👉 Reverse Array using Recursion 🎯
-let array = [1, 2, 3, 4, 5]
+// let array = [1, 2, 3, 4, 5]
 
-let temp;
+// let temp;
 
-function reverse(arr, start, end) {
-  if (start < end) {
-    temp = arr[start]
-    arr[start] = arr[end]
-    arr[end] = temp
-    return reverse(arr, start + 1, start - 1)
-  }
-  console.log(arr)
-}
+// function reverse(arr, start, end) {
+//   if (start < end) {
+//     temp = arr[start]
+//     arr[start] = arr[end]
+//     arr[end] = temp
+//     return reverse(arr, start + 1, start - 1)
+//   }
+//   console.log(arr)
+// }
 
 
-reverse(array, 0, array.length - 1)
+// reverse(array, 0, array.length - 1)
 
 
 
@@ -572,6 +572,7 @@ reverse(array, 0, array.length - 1)
 //     this.rear = -1
 //   }
 
+
 //   enqueue(newValue) {
 //     if (this.front <= -1) {
 //       this.front++
@@ -632,7 +633,7 @@ reverse(array, 0, array.length - 1)
 // 👉 Binary Search with Iterative Approach
 // let array = [1, 2, 6, 9]  //sorted
 
-// let find = 6
+// let find = 9
 
 // let start = 0
 
@@ -661,39 +662,41 @@ reverse(array, 0, array.length - 1)
 
 // 👉 Binary Search with Recursive Approach
 
-// let array = [1, 32, 45, 56, 68]
+let array = [1, 32, 45, 56, 68]
 
-// let find = 6
+let find = 68
 
-// let start = 0
+let start = 0
 
-// let end = array.length
+let end = array.length
 
-// let position;
+let position;
 
-// const findPosition = (array, start, end) => {
+const findPosition = (array, start, end) => {
 
-//   if (array.includes(find)) {
-//     let mid = Math.floor((start + end) / 2)
+  if (array.includes(find)) {
+    let mid = Math.floor((start + end) / 2)
 
-//     if (array[mid] === find) {
-//       position = mid
-//     } else if (array[mid] < find) {
-//       start = mid + 1
-//       findPosition(array, start, end)
-//     } else {
-//       end = mid - 1
-//       findPosition(array, start, end)
-//     }
-//   }
+    if (array[mid] === find) {
+      position = mid
+    } else if (array[mid] < find) {
+      start = mid + 1
+      findPosition(array, start, end)
+    } else {
+      end = mid - 1
+      findPosition(array, start, end)
+    }
+  }else{
+    return console.log("Not Found")
+  }
 
-// }
+}
 
 
-// findPosition(array, start, end)
+findPosition(array, start, end)
 
 
-// console.log(position)
+console.log(position)
 
 
 
@@ -763,14 +766,14 @@ reverse(array, 0, array.length - 1)
 
 
 // 🟢 14 Anagram of String    🎯🎯
-// ⭐ Two Strings having same characters are anagram of wach other. ex => Hello => Elloh.
+// ⭐ Two Strings having same characters are anagram of each other. ex => Hello => Elloh.
 
 // Conditions :
 // 1. Length of 2 string must be same.
 // 2. How many times does the character is repeating like => Hello => Ellho . Hear ll is repeated 2 times
 
-// let s = "tejass"
-// let s2 = "tessja"
+// let s = "tejlasstcl"
+// let s2 = "ltesslcjat"
 
 // const obj = {}
 
@@ -779,7 +782,7 @@ reverse(array, 0, array.length - 1)
 // function checkAnagram(s, s2) {
 
 //   if (s.length !== s2.length) {
-//     return console.log("String Not Matched")
+//     return console.log("String Not Matched") // This resolves no. 1 condition
 //   }
 
 //   for (const a of s) {
@@ -790,7 +793,6 @@ reverse(array, 0, array.length - 1)
 //     if (!obj[a]) {
 //       return console.log("String Not Matched")
 //     }
-//     obj[a]-- // This resolves no. 2 condition
 //   }
 
 //   return console.log("✅ Strings are Anagram")
@@ -850,10 +852,8 @@ reverse(array, 0, array.length - 1)
 // let max = ''
 
 // for (let i = 0; i < str.length; i++) {
-//   if (!obj[str[i]]) {
-//     obj[str[i]] = 0
-//   }
-//   obj[str[i]]++
+
+//   obj[str[i]] = (obj[str[i]] || 0) + 1
 
 //   if (max == '' || obj[str[i]] > obj[max]) {
 //     max = str[i]
@@ -872,18 +872,18 @@ reverse(array, 0, array.length - 1)
 
 // 🟢 17 Object Data Structure  🎯
 
-// ⭐ Difference between Array and Object 
+// ⭐ Difference between Array and Object
 // 1. We can store data in the form of key and values in object.
 // 2. In array if we store different data types ex=> [name, age, email]. Then we cannot identify that which information is name,email, etc. Object resolves issue
 // 3. Object doesn't have duplicte keys
 // 4. There can be Array of object's AND Object key's of multipe array's. ex=>{ key: ["tejas", "rohan"] }
 // 5. Object is also called as Hash Tables
-
+  
 
 // let obj = { key: ["tejas", "rohan"] }
 
 
-// ⭐ inserting data in object 
+// ⭐ inserting data in object
 // obj.age = 45
 // obj.food = "Veg"
 // obj.sex = "Male"
@@ -920,7 +920,7 @@ reverse(array, 0, array.length - 1)
 // defining map with default data
 // let data = new Map([
 //   ["name", "tejas"],
-//   [true, "lazy"],
+//   [null, "lazy"],
 //   [10, "ten"],
 // ])
 
@@ -974,7 +974,7 @@ reverse(array, 0, array.length - 1)
 
 
 
-// 🟢 20 Node Link List  🎯🎯   
+// 🟢 20 Node Link List  🎯🎯
 // ⭐ Link List Structure is a Linear type of Data Structure  (In Sequence)
 
 
@@ -1238,7 +1238,7 @@ reverse(array, 0, array.length - 1)
 
 
 
-let str = "Tejas Wavhal"
+// let str = "Tejas Wavhal"
 
 
 // console.log(str.split(""))
