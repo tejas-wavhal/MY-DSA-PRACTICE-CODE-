@@ -41,7 +41,7 @@
 
 // let arr = [1, 2, 3, 4, 5]
 
-// let position = 0
+// let position = 4
 
 // let insert = 77
 
@@ -270,14 +270,14 @@
 
 // 👉 Direct Recursion 🎯 (within same func)
 // const factorial = (value) => { // 🔴
-//   if (value === 0) {
+//   if (value === 1) {
 //     return 1
 //   }
 
 //   return value * factorial(value - 1)
 // }
 
-// console.log(factorial(5))
+// console.log(factorial(3))
 
 
 
@@ -346,7 +346,7 @@
 //   if (arg > 0) {
 //     test(arg-1)
 //   }
-//   console.log(arg)  // Tail Recursion
+//   // console.log(arg)  // Tail Recursion
 // }
 
 // test(5)
@@ -507,15 +507,16 @@
 
 // const enqueue = (newValue) => {
 
-//   let length = queue.length
-
-//   for (let i = 1; i <= queue.length; i++) {
-//     length = length - 1
-//     const element = queue[length];
-//     queue[length + 1] = element
-//     // console.log(queue[0])
+//   if(queue.length == 0){
+//     queue[0] = newValue
+//   }else{
+//     for(let i = queue.length-1; i >= 0; i--){
+//       let temp = queue[i]
+//       queue[i+1] = temp
+//     }
+//     queue[0] = newValue
 //   }
-//   queue[0] = newValue
+
 // }
 
 // const dequeue = () => queue.length = queue.length - 1
@@ -525,8 +526,8 @@
 // enqueue(22)
 // enqueue(3)
 
-// dequeue()
-// dequeue()
+// // dequeue()
+// // dequeue()
 
 // console.log(queue)
 
@@ -662,41 +663,41 @@
 
 // 👉 Binary Search with Recursive Approach
 
-let array = [1, 32, 45, 56, 68]
+// let array = [1, 32, 45, 56, 68]
 
-let find = 68
+// let find = 68
 
-let start = 0
+// let start = 0
 
-let end = array.length
+// let end = array.length
 
-let position;
+// let position;
 
-const findPosition = (array, start, end) => {
+// const findPosition = (array, start, end) => {
 
-  if (array.includes(find)) {
-    let mid = Math.floor((start + end) / 2)
+//   if (array.includes(find)) {
+//     let mid = Math.floor((start + end) / 2)
 
-    if (array[mid] === find) {
-      position = mid
-    } else if (array[mid] < find) {
-      start = mid + 1
-      findPosition(array, start, end)
-    } else {
-      end = mid - 1
-      findPosition(array, start, end)
-    }
-  }else{
-    return console.log("Not Found")
-  }
+//     if (array[mid] === find) {
+//       position = mid
+//     } else if (array[mid] < find) {
+//       start = mid + 1
+//       findPosition(array, start, end)
+//     } else {
+//       end = mid - 1
+//       findPosition(array, start, end)
+//     }
+//   }else{
+//     return console.log("Not Found")
+//   }
 
-}
-
-
-findPosition(array, start, end)
+// }
 
 
-console.log(position)
+// findPosition(array, start, end)
+
+
+// console.log(position)
 
 
 
@@ -768,12 +769,12 @@ console.log(position)
 // 🟢 14 Anagram of String    🎯🎯
 // ⭐ Two Strings having same characters are anagram of each other. ex => Hello => Elloh.
 
-// Conditions :
+// Conditions:
 // 1. Length of 2 string must be same.
 // 2. How many times does the character is repeating like => Hello => Ellho . Hear ll is repeated 2 times
 
-// let s = "tejlasstcl"
-// let s2 = "ltesslcjat"
+// let s = "tejajsts"
+// let s2 = "tejatssj"
 
 // const obj = {}
 
@@ -782,18 +783,21 @@ console.log(position)
 // function checkAnagram(s, s2) {
 
 //   if (s.length !== s2.length) {
-//     return console.log("String Not Matched") // This resolves no. 1 condition
+//     return console.log("❌ String Not Matched") // This resolves no. 1 condition
 //   }
 
 //   for (const a of s) {
 //     obj[a] = (obj[a] ? obj[a] : 0) + 1  // OR => (obj[a] || 0) + 1
 //   }
-
-//   for (const a of s2) {
-//     if (!obj[a]) {
-//       return console.log("String Not Matched")
-//     }
+// // console.log(obj)
+// for (const a of s2) {
+//   if (!obj[a]) {
+//     return console.log("❌ String Not Matched")
 //   }
+//   // console.log(first)
+//   obj[a]--
+// }
+// // console.log(obj)
 
 //   return console.log("✅ Strings are Anagram")
 // }
@@ -878,7 +882,7 @@ console.log(position)
 // 3. Object doesn't have duplicte keys
 // 4. There can be Array of object's AND Object key's of multipe array's. ex=>{ key: ["tejas", "rohan"] }
 // 5. Object is also called as Hash Tables
-  
+
 
 // let obj = { key: ["tejas", "rohan"] }
 
@@ -1109,7 +1113,7 @@ console.log(position)
 
 
 
-// 🟢 Tree 🌳 🎯🎯
+// 🟢 21) Tree 🌳 🎯🎯
 
 // ⭐ Tree Data Structure is a Non-Linear type of Data Structure  (Not in Sequence)
 
@@ -1257,8 +1261,120 @@ console.log(position)
 
 
 
+// 🟢 22) Fibonacci Number (get elem by index)
+// let getInd = 8
+
+// let a = (n) => {
+//   if (n < 2) {
+//     return n
+//   }
+
+//   let prev = 0, current = 1, next;
+
+//   for (let i = 2; i <= n; i++) {
+//     next = current + prev
+//     prev = current
+//     current = next
+//   }
+
+//   return next
+
+// }
+// console.log(a(getInd));
 
 
+
+
+
+
+
+
+
+// 🟢 22) Coin Change (dp)
+// const coins = [1, 2, 5]
+
+// const amount = 11
+
+// const findMinCoins = (coins, amount) => {
+//   let dp = new Array(amount + 1).fill(amount + 1)
+//   dp[0] = 0
+
+//   for (const coin of coins) {
+//     for (let i = coin; i <= amount; i++) {
+//       dp[i] = Math.min(dp[i], dp[i - coin] + 1)
+//     }
+//   }
+
+//   return dp[amount] > amount ? -1 : dp[amount]
+
+// }
+
+// console.log(findMinCoins(coins, amount))
+
+
+
+
+
+
+
+
+
+
+// 🟢 23) Longest Common Subsequence (dp)
+
+// let str1 = "abaaba"
+// let str2 = "babbab"
+
+// let s1l = str1.length
+// let s2l = str2.length
+
+// const dp = new Array(s1l + 1).fill(0).map(() => new Array(s2l + 1).fill(0))
+
+
+
+// for (let i = 1; i <= s1l; i++) {
+//   for (let j = 1; j <= s2l; j++) {
+//     if (str1[i - 1] === str2[j - 1]) {
+//       dp[i][j] = dp[i - 1][j - 1] + 1
+//     } else {
+//       dp[i][j] = Math.max(dp[i][j-1], dp[i-1][j])
+//     }
+//   }
+// }
+// const len = dp[s1l][s2l]
+
+
+// console.log(dp)
+// console.log(len)
+
+
+
+
+
+
+
+
+// // 🟢 24) 0/1 Knapsack Problem (dp)
+// let totalWeight = 8
+// let totalNum = 4
+
+// let weightItems = [3, 4, 5, 6]
+// let valueItems = [2, 3, 4, 1]
+
+// let dp = new Array(totalNum + 1).fill(0).map(() => new Array(totalWeight + 1).fill(0))
+
+
+// for (let i = 1; i <= totalNum; i++) {
+//   for (let j = 1; j <= totalWeight; j++) {
+//     if (weightItems[i - 1] <= j) {
+//       dp[i][j] = Math.max(valueItems[i - 1] + dp[i - 1][j - weightItems[i - 1]], dp[i - 1][j])
+//     } else {
+//       dp[i][j] = dp[i - 1][j]
+//     }
+//   }
+// }
+
+// console.log(dp[totalNum][totalWeight]);
 
 
 
@@ -1292,3 +1408,35 @@ console.log(position)
 // insert node list
 // breadth first search in Tree
 // Graph 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let n = 5
+
+// let arr = new Array(5)
+// // console.log("🚀 ~ file: index.js:1428 ~ arr:", arr)
+
+// for (let i = 1; i <= n; i++) {
+//   arr[i - 1] = i.toString()
+// }
+
+// for (let i = 0; i < n; i++) {
+//   console.log(arr.join(""))
+//   arr.shift()
+//   addSpace(i)
+// }
+
+// function addSpace() {
+//   arr.unshift(" ")
+// }
