@@ -190,27 +190,27 @@
 
 
 
-// ⭐ The Space and time complexicity :
-// The Space and time complexicity also plays an important role in Programming.
-// The Less is the Space and time complexicity the more good is the performance of code.
-// As we compare all the merge code the worse is the one with While Loop, because of more both Space and time complexicity
+// ⭐ The Space and time complexity :
+// The Space and time complexity also plays an important role in Programming.
+// The Less is the Space and time complexity the more good is the performance of code.
+// As we compare all the merge code the worse is the one with for lopo with nest loop, because of more both Space and time complexity
 // But with sorting the While Loop code is Best
 
 
 
 
 // 🎯
-// ⭐ The Time Complexity is depend on the line od codes (including how much times loops runs).
+// ⭐ The Time Complexity is depend on the inputs, line of codes and loops (how much times loops runs).
 // ⭐ The Space Complexity is (how much the variables are asigned) + (how much memory does the system takes to execute)
-// ⭐ The Algorithms Complexity is that what algorithms shall we use to execute code keeping in mind of Space and Time Complexcity
+// ⭐ The Algorithms Complexity is that what algorithms shall we use to execute code keeping in mind of Space and Time Complexity
 // ⭐ Big O Notation => used to denote complexity of Algorithms
 
 
 
 // ⭐ Asymptotic Analysis & Notation (❌)
-// There are multiple solutions to code foe a solution.
+// There are multiple solutions to code for a solution.
 //  Asymptotic Analysis helps us to find a solution which is best for us. i.e based on Time and Space Complexity
-// In Asymptototic Analysis how to calculate Space and Time and Space Complexcity also comes.
+// In Asymptototic Analysis how to calculate Space and Time and Space Complexity also comes.
 
 // Asymptotic Notation = > f(n) = 5n2 + 6n + 10
 
@@ -224,7 +224,7 @@
 
 
 // 🟢 7 Bubble Sorting of Array 🎯
-// The algorithm complexcity of bubble sorting is (Big O N Square) => O(N2)
+// The algorithm complexity of bubble sorting is (Big O N Square) => O(N2)
 
 // 👉 Ascending
 // let arr = [40, 30, 12, 25]
@@ -532,14 +532,14 @@
 // console.log(queue)
 
 
-// 👉 Accessing Front and Rear Value in Queue (CONTINUING THE AVOVE CODE)
+// 👉 Accessing Front and Rear Value in Queue (CONTINUING THE ABOVE CODE)
 
 // ⭐ Accessing the value entered 1st is called Front value of Queue (The point we are doing Dequeue)
 // ⭐ Accessing the value entered last is called Rear value of Queue (The point we are doing Enqueue)
 
 
 
-// (CONTINUING THE AVOVE CODE)
+// (CONTINUING THE ABOVE CODE)
 // const getFrontValue = () => {
 //   if (queue.length) {
 //     console.log(queue[queue.length - 1])
@@ -621,8 +621,8 @@
 
 // 🟢 11 Linear Search 🎯
 // ⭐ Linear search is searching an array's value on by one using loops
-// ⭐ The Complexcity of Linear Search is O(N) (Big O N)   (n sands for inputs (values of array))
-// ( The Complexcity of Sorting is is O(N)2 (Big O N square) because we are using 2 loops in sorting)
+// ⭐ The Complexity of Linear Search is O(N) (Big O N)   (n sands for inputs (values of array))
+// ( The Complexity of Sorting is is O(N)2 (Big O N square) because we are using 2 loops in sorting)
 
 
 
@@ -707,7 +707,7 @@
 
 
 // 🟢 13 Selection Sorting of Array 🎯
-// The algorithm complexcity of Selection and Bubble sorting is (Big O N Square) => O(N2)
+// The algorithm complexity of Selection and Bubble sorting is (Big O N Square) => O(N2)
 
 //  👉 Ascending
 // let array = [20, 12, 53, 3]
@@ -918,7 +918,7 @@
 // ⭐ Difference between Map and Object :
 // 1. Object's key and value are seperated by ":" and map's by "=>"
 // 2. The key in object is of string data type. But in map the key can be of any data type. ex: false=>"tejas"
-// 3. Same as Object Duplicate keys are not allowed in a Map
+// 3. Same as Object, Duplicate keys are not allowed in a Map
 
 
 // defining map with default data
@@ -982,122 +982,142 @@
 // ⭐ Link List Structure is a Linear type of Data Structure  (In Sequence)
 
 
-// class NodeList {
-//   constructor(data) {
-//     this.head = {
-//       value: data,
-//       next: null
-//     }
-
-//     this.tail = this.head
-
-//     this.size = 1
-//   }
-
-//   appendNode(nodeData) {  //
-//     let newNode = {
-//       value: nodeData,
-//       next: null
-//     }
-//     this.tail.next = newNode
-//     this.tail = newNode
-//     this.size++
-//   }
-
-//   // Traversing Linked List
-//   traversing() {
-//     let counter = 0;
-//     let currentNode = this.head
-//     while (counter < this.size) {
-//       console.log(currentNode)
-//       currentNode = currentNode.next
-//       counter++
-//     }
-//     // console.log(this.head)
-//   }
-
-//   // delete node
-//   deleteNode(index) {
-//     if (1 === index) {
-//       this.head = this.head.next
-//       this.size--
-//     } else {
-//       let counter = 1;
-//       let lead = this.head;
-//       while (counter < index - 1) {
-//         lead = lead.next
-//         counter++
-//       }
-//       let nextNode = lead.next.next
-//       lead.next = nextNode
-//       this.size--
-//     }
-//   }
-
-//   searchNode(nodeNumber) {
-//     let result;
-//     if (nodeNumber == 1) {
-//       result = this.head
-//     } else {
-//       let counter = 1
-//       let currentNode = this.head
-//       while (counter < nodeNumber) {
-//         currentNode = currentNode.next
-//         counter++
-//       }
-//       result = currentNode
-//     }
-//     return console.log(result)
-//   }
-
-//   insertNode(index, value) {
-//     if (index == 1) {
-//       let newNode = {
-//         value,
-//         next: this.head
-//       }
-//       this.head = newNode
-//       this.size++
-//     } else {
-//       let counter = 1
-//       let currentNode = this.head
-//       let prevNode = this.head
-//       while (counter < index) {
-//         currentNode = currentNode.next
-//         if (counter > 1) {
-//           prevNode = prevNode.next
-//         }
-//         counter++
-//       }
-//       let newNode = {
-//         value,
-//         next: null
-//       }
-//       prevNode.next = newNode
-//       newNode.next = currentNode
-//       this.size++
-//     }
-//   }
-
-// }
-
-// let nodeList = new NodeList(200)
-// nodeList.appendNode(400)
-// nodeList.appendNode(600)
-// nodeList.appendNode(700)
-// // nodeList.appendNode(800)
-
-// // nodeList.deleteNode(3)
 
 
-// nodeList.insertNode(1, 50)
-
-// nodeList.searchNode(1)
 
 
-// console.log(nodeList)
+class LinkList {
+  constructor(value) {
+    this.head = {
+      value,
+      next: null
+    }
+    this.tail = this.head
+    this.size = 1
+  }
 
-// nodeList.traversing()
+  append(newValue) {
+    let newNode = {
+      value: newValue,
+      next: null
+    }
+
+    this.tail.next = newNode
+    this.tail = newNode
+    this.size++
+  }
+
+  displayNode() {
+    console.log(this.head)
+    console.log(this.tail)
+  }
+
+  getSize() {
+    console.log(this.size)
+  }
+
+  traverse() {
+    let count = 0
+    let currNode = this.head
+
+    while (count < this.size) {
+      console.log(currNode)
+      currNode = currNode.next
+      count++
+    }
+  }
+
+  deleteNode(ind) {
+    if (ind === 0) {
+      this.head = this.head.next
+    } else {
+      let prevNode = this.head
+      for (let i = 0; i < ind - 1; i++) {
+        prevNode = prevNode.next
+      }
+      prevNode.next = prevNode.next.next
+    }
+    this.size--
+  }
+
+  searchNode(ind) {
+    let result = this.head
+    let count = 0
+    while (count < ind) {
+      result = result.next
+      count++
+    }
+    console.log(result)
+  }
+
+  insertNode(ind, newVal) {
+    let newNode = {
+      value: newVal,
+      next: null
+    }
+    if (ind === 0) {
+      newNode.next = this.head
+      this.head = newNode
+    } else {
+      let prevNode = this.head
+      for (let i = 0; i < ind - 1; i++) {
+        prevNode = prevNode.next
+      }
+      newNode.next = prevNode.next
+      prevNode.next = newNode
+    }
+
+    this.size++
+
+  }
+
+
+
+  reverse() {
+    let result;
+    let currentNode = { ...this.head }
+    for (let i = 0; i < this.size; i++) {
+      let temp = currentNode.next
+      currentNode.next = null
+      if (!result) {
+        result = currentNode
+      } else { 
+        result.next = currentNode
+      }
+      currentNode = temp
+    }
+    this.head = result
+  }
+}
+
+
+// let a = new LinkList(5)
+
+// a.append(10)
+// a.append(320)
+// // a.append(400)
+// // a.deleteNode(2)
+// // a.searchNode(3)
+// // a.insertNode(3, 50)
+
+// // a.traverse()
+
+// a.reverse()
+
+// a.displayNode()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1118,7 +1138,7 @@
 // ⭐ Tree Data Structure is a Non-Linear type of Data Structure  (Not in Sequence)
 
 // ⭐ Tree🌳 can have many nodes but,
-// ⭐ Binary Tree🌳 have maximun two node (i.e left node and right node)
+// ⭐ Binary Tree🌳 have maximum two node (i.e left node and right node)
 
 // ⭐ Binary Search Tree ==> Left Node < Root Node < Right Node
 
@@ -1126,113 +1146,170 @@
 
 
 
-// class Node {
-//   constructor(value) {
-//     this.value = value
-//     this.left = null
-//     this.right = null
-//   }
-// }
+class Node {
+  constructor(value) {
+    this.value = value
+    this.left = null
+    this.right = null
+  }
+}
 
 
-// class BSTree {
-//   constructor() {
-//     this.root = null
-//   }
+class BSTree {
+  constructor() {
+    this.root = null
+  }
 
-//   isTreeEmpty() {
-//     return !!!this.root
-//   }
+  isTreeEmpty() {
+    return !!!this.root
+  }
 
-//   makeTree(rootValue) {
-//     let newNode = new Node(rootValue)
-//     if (!!!this.root) {
-//       this.root = newNode
-//     } else {
-//       this.insertNode(this.root, newNode)
-//     }
-//   }
+  makeTree(rootValue) {
+    let newNode = new Node(rootValue)
+    if (!!!this.root) {
+      this.root = newNode
+    } else {
+      this.insertNode(this.root, newNode)
+    }
+  }
 
-//   insertNode(root, newNode) {
-//     if (root.value > newNode.value) {
-//       if (!!!root.left) {
-//         root.left = newNode
-//       } else {
-//         this.insertNode(root.left, newNode)
-//       }
-//     }
-//     if (root.value < newNode.value) {
-//       if (!!!root.right) {
-//         root.right = newNode
-//       } else {
-//         this.insertNode(root.right, newNode)
-//       }
-//     }
-//   }
+  insertNode(root, newNode) {
+    if (root.value > newNode.value) {
+      if (!!!root.left) {
+        root.left = newNode
+      } else {
+        this.insertNode(root.left, newNode)
+      }
+    }
+    if (root.value < newNode.value) {
+      if (!!!root.right) {
+        root.right = newNode
+      } else {
+        this.insertNode(root.right, newNode)
+      }
+    }
+  }
 
-//   doesNodeExists(root, value) {
-//     if (!!!root) {
-//       return !!root
-//     } else if (root.value === value) {
-//       return true
-//     } else if (value < root.value) {
-//       return this.doesNodeExists(root.left, value)
-//     } else {
-//       return this.doesNodeExists(root.right, value)
-//     }
-//   }
-
-//   // deep first search => pre order
-//   preOrder(root) {
-//     debugger;
-//     if (root) {
-//       console.warn(root.value);
-//       this.preOrder(root.left);
-//       this.preOrder(root.right);
-//     }
-//   }
-
-//   // deep first search => post order
-//   postOrder(root) {
-//     if (root) {
-//       this.postOrder(root.left);
-//       this.postOrder(root.right);
-//       console.warn(root.value);
-//     }
-//   }
-
-//   maxValue(root) {
-//     if (!root.right) {
-//       return root.value;
-//     } else {
-//       return this.maxValue(root.right);
-//     }
-//   }
-
-//   maxValue(root) {
-//     if (!root.right) {
-//       return root.value;
-//     } else {
-//       return this.maxValue(root.right);
-//     }
-//   }
-
-// }
+  doesNodeExists(root, value) {
+    if (!!!root) {
+      return !!root
+    } else if (root.value === value) {
+      return true
+    } else if (value < root.value) {
+      return this.doesNodeExists(root.left, value)
+    } else {
+      return this.doesNodeExists(root.right, value)
+    }
+  }
 
 
+  // deep first search => pre order
+  // just traverse approach
+  preOrder(root) {
+    debugger;
+    if (root) {
+      console.warn(root.value);
+      this.preOrder(root.left);
+      this.preOrder(root.right);
+    }
+  }
 
-// let tree = new BSTree()
 
-// tree.makeTree(100)
-// tree.makeTree(50)
-// tree.makeTree(600)
-// tree.makeTree(500)
-// tree.makeTree(10)
-// tree.makeTree(30)
+  // deep first search => pre order
+  // return array approach 
+  preOrder(root) {
+    let result;
+    if (root) {
+      // console.warn(root.value);
+      let leftNode = this.preOrder(root.left);
+      let rightNode = this.preOrder(root.right);
+      result = [root.value, ...leftNode, ...rightNode]
+    } else {
+      result = []
+    }
+    return result
+  }
+
+  // deep first search => pre order
+  // custom stack approach 
+  preOrder(root) {
+    if (!root) return []
+
+    let stack = [root]
+    let result = []
+
+    while (stack.length > 0) {
+      const current = stack.pop()
+      result.push(current.value)
+
+      if (current.right) stack.push(current.right)
+      if (current.left) stack.push(current.left)
+    }
+    return result;
+
+  }
+
+  // deep first search => post order ❌
+  postOrder(root) {
+    if (root) {
+      this.postOrder(root.left);
+      this.postOrder(root.right);
+      console.warn(root.value);
+    }
+  }
+
+
+  maxValue(root) {
+    if (!root.right) {
+      return root.value;
+    } else {
+      return this.maxValue(root.right);
+    }
+  }
+
+  maxValue(root) {
+    if (!root.right) {
+      return root.value;
+    } else {
+      return this.maxValue(root.right);
+    }
+  }
+
+  sumTree(root = this.root) {
+    if (root === null) {
+      return 0;
+    }
+
+    const leftSum = this.sumTree(root.left);
+    const rightSum = this.sumTree(root.right);
+
+    return root.value + leftSum + rightSum;
+  }
+
+}
+
+// to be covered today:
+// breadth first value
+// tree sum
+// Max Root to Leaf Path Sum
+
+
+let tree = new BSTree()
+
+tree.makeTree(100)
+tree.makeTree(50)
+tree.makeTree(600)
+tree.makeTree(500)
+tree.makeTree(10)
+tree.makeTree(30)
 
 // console.log(tree.doesNodeExists(tree.root, 555))
-// tree.preOrder(tree.root)
 
+let sum = tree.sumTree()
+console.log(sum)
+
+// let res = tree.preOrder(tree.root)
+// console.log(res)
 
 
 
@@ -1260,27 +1337,26 @@
 
 
 
-
 // 🟢 22) Fibonacci Number (get elem by index)
-// let getInd = 8
+// 0 1 1 2 3 5 8 13
+let getInd = 8
 
-// let a = (n) => {
-//   if (n < 2) {
-//     return n
-//   }
+let a = (n) => {
+  if (n < 2) {
+    return n
+  }
 
-//   let prev = 0, current = 1, next;
+  let prev = 0, current = 1, next;
 
-//   for (let i = 2; i <= n; i++) {
-//     next = current + prev
-//     prev = current
-//     current = next
-//   }
+  for (let i = 2; i <= n; i++) {
+    next = current + prev
+    prev = current
+    current = next
+  }
 
-//   return next
-
-// }
-// console.log(a(getInd));
+  return next
+}
+console.log(a(getInd));
 
 
 
@@ -1291,9 +1367,9 @@
 
 
 // 🟢 22) Coin Change (dp)
-// const coins = [1, 2, 5]
+// const coins = [1, 5 , 9]
 
-// const amount = 11
+// const amount = 20
 
 // const findMinCoins = (coins, amount) => {
 //   let dp = new Array(amount + 1).fill(amount + 1)
@@ -1304,6 +1380,7 @@
 //       dp[i] = Math.min(dp[i], dp[i - coin] + 1)
 //     }
 //   }
+//   console.log("🚀 ~ file: index.js:1376 ~ findMinCoins ~ dp:", dp)
 
 //   return dp[amount] > amount ? -1 : dp[amount]
 
@@ -1317,13 +1394,10 @@
 
 
 
-
-
-
 // 🟢 23) Longest Common Subsequence (dp)
 
-// let str1 = "abaaba"
-// let str2 = "babbab"
+// let str1 = "abaa"
+// let str2 = "babb"
 
 // let s1l = str1.length
 // let s2l = str2.length
@@ -1354,34 +1428,70 @@
 
 
 
-// // 🟢 24) 0/1 Knapsack Problem (dp)
-// let totalWeight = 8
-// let totalNum = 4
+// 🟢 24) 0/1 Knapsack Problem (dp)
+let totalWeight = 8
+let totalNum = 4
 
-// let weightItems = [3, 4, 5, 6]
-// let valueItems = [2, 3, 4, 1]
+let weightItems = [3, 4, 5, 6]
+let valueItems = [2, 3, 4, 1]
 
-// let dp = new Array(totalNum + 1).fill(0).map(() => new Array(totalWeight + 1).fill(0))
+let dp = new Array(totalNum + 1).fill(null).map(() => new Array(totalWeight + 1).fill(0))
 
 
-// for (let i = 1; i <= totalNum; i++) {
-//   for (let j = 1; j <= totalWeight; j++) {
-//     if (weightItems[i - 1] <= j) {
-//       dp[i][j] = Math.max(valueItems[i - 1] + dp[i - 1][j - weightItems[i - 1]], dp[i - 1][j])
+for (let i = 1; i <= totalNum; i++) {
+  for (let j = 1; j <= totalWeight; j++) {
+    if (weightItems[i - 1] <= j) {
+      dp[i][j] = Math.max(valueItems[i - 1] + dp[i - 1][j - weightItems[i - 1]], dp[i - 1][j])
+    } else {
+      dp[i][j] = dp[i - 1][j]
+    }
+  }
+}
+
+console.log(dp[totalNum][totalWeight]);
+
+
+
+
+
+// 🟢 25) Edit Distance (dp)
+// let str1 = "horse"
+// let str2 = "rose"
+
+// let s1l = str1.length
+// let s2l = str2.length
+
+
+// let table = new Array(s1l + 1).fill(null).map(() => new Array(s2l + 1).fill(0))
+
+// for (let i = 1; i <= s1l; i++) {
+//   table[i][0] = i
+// }
+
+// for (let i = 1; i <= s2l; i++) {
+//   table[0][i] = i
+// }
+
+
+
+// for (let i = 1; i <= s1l; i++) {
+//   for (let j = 1; j <= s2l; j++) {
+//     if (str1[i - 1] == str2[j - 1]) {
+//       table[i][j] = table[i - 1][j - 1]
 //     } else {
-//       dp[i][j] = dp[i - 1][j]
+//       table[i][j] = Math.min(
+//         table[i - 1][j] + 1,
+//         table[i - 1][j - 1] + 1,
+//         table[i][j - 1] + 1
+//       )
 //     }
 //   }
 // }
 
-// console.log(dp[totalNum][totalWeight]);
+// let minOperation = table[s1l][s2l]
 
-
-
-
-
-
-
+// console.log(table)
+// console.log(minOperation)
 
 
 
@@ -1404,39 +1514,10 @@
 // SKIPED
 
 // circular queue
-// insert soring of array
 // insert node list
 // breadth first search in Tree
-// Graph 
+// Graph
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-// let n = 5
-
-// let arr = new Array(5)
-// // console.log("🚀 ~ file: index.js:1428 ~ arr:", arr)
-
-// for (let i = 1; i <= n; i++) {
-//   arr[i - 1] = i.toString()
-// }
-
-// for (let i = 0; i < n; i++) {
-//   console.log(arr.join(""))
-//   arr.shift()
-//   addSpace(i)
-// }
-
-// function addSpace() {
-//   arr.unshift(" ")
-// }

@@ -248,7 +248,7 @@
 // }
 
 // const word1 = "horse";
-// const word2 = "ros";
+// const word2 = "rose";
 // console.log(minDistance(word1, word2))
 
 
@@ -335,7 +335,6 @@
 // }
 
 // let minOperation = table[s1l][s2l]
-// // console.log("🚀 ~ file: practise.js:330 ~ minOperation:", minOperation)
 // console.log(table)
 
 
@@ -454,7 +453,6 @@
 
 // let start = 0;
 // let end = table.length * table[0].length;
-// // console.log("🚀 ~ file: practise.js:448 ~ end:", end)
 // let parentPosition;
 // let childPosition;
 // let find = 20;
@@ -678,23 +676,23 @@
 
 
 // INSERT SORTING
-// let arr = [32, 45, 8, 12, 54, 1]
+let arr = [32, 45, 8, 12, 54, 1]
 
 
-// for (let i = 1; i < arr.length; i++) {
-//   let temp = arr[i]
-//   let j = i - 1
+for (let i = 1; i < arr.length; i++) {
+  let temp = arr[i]
+  let j = i - 1
 
-//   while (j >= 0 && arr[j] > temp) {
-//     arr[j + 1] = arr[j]
-//     j--
-//   }
+  while (j >= 0 && arr[j] > temp) {
+    arr[j + 1] = arr[j]
+    j--
+  }
 
-//   arr[j + 1] = temp
+  arr[j + 1] = temp
 
-// }
+}
 
-// console.log(arr)
+console.log(arr)
 
 
 
@@ -798,23 +796,587 @@
 
 
 
-// Fibonacci Number 
-let getInd = 8
+// Fibonacci Number
+// let getInd = 8
 
-let a = (n) => {
-  if (n < 2) {
-    return n
+// let a = (n) => {
+//   if (n < 2) {
+//     return n
+//   }
+
+//   let prev = 0, current = 1, next;
+
+//   for (let i = 2; i <= n; i++) {
+//     next = current + prev
+//     prev = current
+//     current = next
+//   }
+
+//   return next
+
+// }
+// console.log(a(getInd));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let arr = [1, 3, 5, 6, 8, 9]
+// let find = 1
+
+// const binarySearch = (arr, find) => {
+//   let start = 0
+//   let end = arr.length - 1
+//   let position;
+
+//   while (start <= end) {
+//     let mid = Math.floor((start + end) / 2)
+//     if (arr[mid] === find) {
+//       position = mid
+//       console.log(`${find} is on position: ${position}`)
+//       break;
+//     } else if (find > arr[mid]) {
+//       start = mid + 1
+//     } else if (find < arr[mid]) {
+//       end = mid - 1
+//     }
+//   }
+// };
+
+// binarySearch(arr, find)
+
+
+
+
+
+
+
+// const linearSearch = (arr, find) => {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr.includes(find)) {
+//       if (arr[i] === find) {
+//         console.log(`${find} is on the index no: ${i}`)
+//       }
+//     } else {
+//       console.log("Not found in Array")
+//       break;
+//     }
+//   }
+// }
+
+// linearSearch(arr, find)
+
+
+
+
+// 0 1 1 2 3 5 8 13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class LinkList {
+  constructor(value) {
+    this.head = {
+      value,
+      next: null
+    }
+    this.tail = this.head
+    this.size = 1
   }
 
-  let prev = 0, current = 1, next;
+  append(newValue) {
+    let newNode = {
+      value: newValue,
+      next: null
+    }
 
-  for (let i = 2; i <= n; i++) {
-    next = current + prev
-    prev = current
-    current = next
+    this.tail.next = newNode
+    this.tail = newNode
+    this.size++
   }
 
-  return next
+  displayNode() {
+    console.log(this.head)
+    console.log(this.tail)
+  }
+
+  getSize() {
+    console.log(this.size)
+  }
+
+  traverse() {
+    let count = 0
+    let currNode = this.head
+
+    while (count < this.size) {
+      console.log(currNode)
+      currNode = currNode.next
+      count++
+    }
+  }
+
+  deleteNode(ind) {
+    if (ind === 0) {
+      this.head = this.head.next
+    } else {
+      let prevNode = this.head
+      for (let i = 0; i < ind - 1; i++) {
+        prevNode = prevNode.next
+      }
+      prevNode.next = prevNode.next.next
+    }
+    this.size--
+  }
+
+  searchNode(ind) {
+    let result = this.head
+    let count = 0
+    while (count < ind) {
+      result = result.next
+      count++
+    }
+    console.log(result)
+  }
+
+  insertNode(ind, newVal) {
+    let newNode = {
+      value: newVal,
+      next: null
+    }
+    if (ind === 0) {
+      newNode.next = this.head
+      this.head = newNode
+    } else {
+      let prevNode = this.head
+      for (let i = 0; i < ind - 1; i++) {
+        prevNode = prevNode.next
+      }
+      newNode.next = prevNode.next
+      prevNode.next = newNode
+    }
+    this.size++
+  }
+
 
 }
-console.log(a(getInd));
+
+
+let a = new LinkList(5)
+
+a.append(10)
+a.append(320)
+// a.append(400)
+a.deleteNode(2)
+// a.searchNode(3)
+// a.insertNode(3, 50)
+
+a.traverse()
+// a.displayNode()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class Node {
+//   constructor(value) {
+//     this.value = value
+//     this.right = null
+//     this.left = null
+//   }
+// }
+
+// class BSTree {
+//   constructor() {
+//     this.root = null
+//   }
+
+//   isTreeEmpty() {
+//     console.log(!!!this.root)
+//   }
+
+//   makeTree(value) {
+//     let newNode = new Node(value)
+//     if (!this.root) {
+//       this.root = newNode
+//     } else {
+//       this.insertNode(this.root, newNode)
+//     }
+//   }
+
+//   insertNode(root, newNode) {
+//     if (root.value < newNode.value) {
+//       if (!root.right) {
+//         root.right = newNode
+//       } else {
+//         this.insertNode(root.right, newNode)
+//       }
+//     }
+//     if (root.value > newNode.value) {
+//       if (!root.left) {
+//         root.left = newNode
+//       } else {
+//         this.insertNode(root.left, newNode)
+//       }
+//     }
+//   }
+
+//   doesNodeExist(nodeValue, root = this.root) {
+//     if (!root?.value) {
+//       console.log(!!root?.value)
+//     } else if (root.value === nodeValue) {
+//       console.log(!!root.value)
+//     } else if (root.value < nodeValue) {
+//       this.doesNodeExist(nodeValue, root.right)
+//     } else if (root.value > nodeValue) {
+//       this.doesNodeExist(nodeValue, root.left)
+//     }
+//   }
+
+//   minValue(root = this.root) {
+//     if (root) {
+//       if (root.left) {
+//         this.minValue(root.left)
+//       } else {
+//         console.log(root.value)
+//       }
+//     } else {
+//       console.log("Tree is empty")
+//     }
+//   }
+
+//   maxValue(root = this.root) {
+//     if (root) {
+//       if (root.right) {
+//         this.maxValue(root.right)
+//       } else {
+//         console.log(root.value)
+//       }
+//     } else {
+//       console.log("Tree is empty")
+//     }
+//   }
+
+
+//   breadthFirstSearch(root = this.root) {
+//     if (!root) return [];
+
+//     let queue = [root];
+//     let result = [];
+
+//     while (queue.length > 0) {
+//       let current = queue[0];
+
+//       result.push(current.value);
+
+//       if (current.left) queue.push(current.left);
+//       if (current.right) queue.push(current.right);
+
+//       queue.shift();
+//     }
+
+//     return result;
+//   }
+
+
+
+// }
+
+
+
+
+// const a = new BSTree()
+// a.makeTree(5)
+// a.makeTree(10)
+// a.makeTree(20)
+// a.makeTree(4)
+// a.makeTree(1)
+// a.makeTree(15)
+// a.isTreeEmpty()
+// a.doesNodeExist(20)
+// a.minValue()
+// a.maxValue()
+
+// const bfsResult = a.breadthFirstSearch();
+// console.log(bfsResult);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//DP EDIT DISTANCE
+
+// let str1 = "horse"
+// let str2 = "rose"
+
+
+// let table = new Array(str1.length + 1).fill(null).map(() => new Array(str2.length + 1).fill(0))
+
+
+// for (let i = 0; i <= str1.length; i++) {
+//   table[i][0] = i
+// }
+// for (let i = 0; i <= str2.length; i++) {
+//   table[0][i] = i
+// }
+
+
+// for (let i = 1; i <= str1.length; i++) {
+//   for (let j = 1; j <= str2.length; j++) {
+//     if (str1[i - 1] === str2[j - 1]) {
+//       table[i][j] = table[i - 1][j - 1]
+//     } else {
+//       table[i][j] = Math.min(
+//         table[i - 1][j - 1] + 1,
+//         table[i][j - 1] + 1,
+//         table[i - 1][j] + 1,
+//       )
+//     }
+//   }
+
+// }
+// const result = `Minimum Operations is ${table[str1.length][str2.length]}`
+
+// console.log(result)
+// console.log(table)
+
+
+
+
+
+// COIN CHANGE - DP
+
+
+// let coins = [1, 5, 9]
+// let amount = 20
+
+// const coinChange = (coins,amount) => {
+//   let dp = new Array(amount + 1).fill(amount + 1)
+//   dp[0] = 0
+
+
+//   for (let coin of coins) {
+//     for (let i = coin; i <= amount; i++) {
+//       dp[i] = Math.min(dp[i], dp[i - coin] + 1)
+//     }
+//   }
+//   console.log(dp)
+//   return dp[amount] > amount ? -1 : dp[amount]
+
+// }
+
+// console.log(coinChange(coins,amount))
+
+
+
+
+
+
+// LONGEST COMMON SUBSEQUENCE
+// let str1 = "abaa"
+// let str2 = "babb"
+
+// let dp = new Array(str1.length + 1).fill(0).map(() => new Array(str2.length + 1).fill(0))
+
+// console.log(dp)
+
+// for (let i = 1; i <= str1.length; i++) {
+//   for (let j = 1; j <= str2.length; j++) {
+//     if (str1[i-1] === str2[j-1]) {
+//       dp[i][j] = dp[i - 1][j - 1] + 1
+//     } else {
+//       dp[i][j] = Math.max(
+//         dp[i][j - 1],
+//         dp[i - 1][j],
+//       )
+//     }
+//   }
+// }
+// console.log(dp)
+// console.log(dp[str1.length][str2.length])
+
+
+
+
+
+
+
+
+
+
+
+// const knapsack = (weights, values, totalWeight) => {
+
+//   let n = weights.length
+
+//   for (let i = 0; i < weights.length; i++) {
+//     minId = i
+//     for (let j = i + 1; j < weights.length; j++) {
+//       if (weights[j] < weights[minId]) {
+//         minId = j
+//       }
+//     }
+//     let temp = weights[minId]
+//     weights[minId] = weights[i]
+//     weights[i] = temp
+
+//     let temp2 = values[minId]
+//     values[minId] = values[i]
+//     values[i] = temp2
+//   }
+
+//   let dp = new Array(n + 1).fill(null).map(() => new Array(totalWeight + 1).fill(0))
+
+//   for (let i = 1; i <= n; i++) {
+
+//     for (let j = 1; j <= totalWeight; j++) {
+//       if (weights[i - 1] <= j) {
+//         dp[i][j] = Math.max(values[i - 1] + dp[i - 1][j - weights[i - 1]], dp[i - 1][j])
+//       } else {
+//         dp[i][j] = dp[i - 1][j]
+//       }
+//     }
+//   }
+
+//   console.log(dp)
+//   console.log(dp[n][totalWeight])
+
+// }
+
+
+
+
+// let weights = [3, 4, 6, 5]
+// let values = [2, 3, 1, 4]
+
+// let totalWeight = 8
+
+
+// knapsack(weights, values, totalWeight)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SATURDAY MORNING FOCUS:
+// BINARY SEARCH .
+// SELECT SORTING .
+// INSERT SORTING .
+// ARRAY REVERSE USING STACK .
+// SET .
+// MAP .
+// FIBONACCI NUM FIND .
+// MAX OCCURANCE CHARACTER .
+// OBJ DSA .
+// DELETE NODE .
+// INSERT NODE .
+// BS-TREE .
+// BINARY SEARCH IN 2D ARRAY
+
+
+
+// CURIOSITY:
+// MAP IN PATTERN Q'S => TIME COMPLEXITY .
+
+
+
+// RATTA :
+// INSERT NODE
+// DELETE NODE
+// FIBONACCI
+// BOTH DEEP FIRST SEARCH TECHNIQUE
+// INSERT SORTING
+
+
+
